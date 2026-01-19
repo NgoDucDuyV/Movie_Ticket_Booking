@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@config "../tailwind.config.cjs";
+@import 'tailwind-animations';
 /* Tailwind v4: override breakpoints tại đây */
 @theme {
   --breakpoint-sx: 240px;
