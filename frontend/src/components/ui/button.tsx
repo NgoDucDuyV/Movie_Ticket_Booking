@@ -20,7 +20,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         register:"px-6 py-2 rounded-full border border-white text-white text-sm font-medium transition hover:bg-white hover:text-black",
-        login:"px-6 py-2 rounded-full text-white text-sm font-medium transition bg-gradient-to-r from-[#FE6969] to-[#E30713] hover:from-[#ff7b7b] hover:to-[#c90612]",
+        login: "px-6 py-2 rounded-full text-white text-sm font-medium transition bg-gradient-to-r from-[#FE6969] to-[#E30713] hover:from-[#ff7b7b] hover:to-[#c90612]",
+        fill:"px-6 py-2 rounded-full border border-white text-white text-sm font-medium transition hover:bg-white hover:text-black"
       },
       size: {
         default: "h-9 px-4 py-2",

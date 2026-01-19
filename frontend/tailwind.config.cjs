@@ -1,15 +1,18 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    screens: {
-      sm: "340px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1537px",
+    extend: {
+      colors: {
+        app: "#0F172A",
+        cinema: "#10141B",
+      },
+      backgroundImage: {
+        "app-gradient":
+          "linear-gradient(135deg, #10141B 0%, #1A1F2B 50%, #000000 100%)",
+      },
     },
-    extend: {},
   },
   plugins: [],
 };

@@ -6,6 +6,9 @@ function App() {
       <BrowserRouter>
         <MainLayout/>
       </BrowserRouter>
+      <div className="max-w-app mx-auto bg-app-gradient text-white p-4 text-black">
+        TEST max-w-app + bg-app-gradient
+      </div>
     </>
   )
 }
