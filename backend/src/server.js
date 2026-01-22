@@ -46,10 +46,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 
-// API routes
-// import router from "./routes/index.js";
-// app.use("/api", router);
-
 // ============================================
 // 3. ERROR HANDLING
 // ============================================

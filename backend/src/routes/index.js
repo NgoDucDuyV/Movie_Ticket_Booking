@@ -1,8 +1,7 @@
 import express from "express";
+import authRoutes from "../routes/auth.routes.js";
 const router = express.Router();
 
-router.use("/auth", (req, res) => {
-  console.log("vào auth thành côgn");
-});
+router.use("/auth", authRoutes);
 
 export default router;
