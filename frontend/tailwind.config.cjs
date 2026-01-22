@@ -1,10 +1,17 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
     extend: {
       colors: {
+        /* ===== Base App ===== */
         app: {
           DEFAULT: "#0F172A",
           dark: "#020617",
@@ -15,22 +22,33 @@ module.exports = {
           soft: "#1A1F2B",
         },
 
+        /* ===== Brand ===== */
         brand: {
           DEFAULT: "#623294",
           light: "#7A3DB6",
           dark: "#4A236F",
         },
 
+        /* ===== Form / Action ===== */
         form: {
           DEFAULT: "#3760C2",
           hover: "#2F52A6",
           focus: "#27458B",
         },
 
+        /* ===== Highlight ===== */
         highlight: {
           DEFAULT: "#F3EA28",
           soft: "#FFF176",
           dark: "#C9C01E",
+        },
+
+        /* ===== White / Text ===== */
+        white: {
+          DEFAULT: "#FFFFFF",
+          soft: "#F8FAFC", // nền card
+          muted: "#E5E7EB", // border, divider
+          dark: "#CBD5E1", // text phụ
         },
       },
     },
