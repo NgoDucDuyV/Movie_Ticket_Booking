@@ -10,7 +10,24 @@ module.exports = {
   prefix: "",
   theme: {
     extend: {
+      fontFamily: {
+        display: ["Be Vietnam Pro", "sans-serif"],
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "1rem",
+        "2xl": "1.5rem",
+        full: "9999px",
+      },
       colors: {
+        gold: "#D4AF37",
+        "background-dark": "#050505",
+        "surface-dark": "#121212",
+        primary: "#e61919",
+        "background-light": "#f8f6f6",
+        "surface-dark": "#211111",
+        "accent-dark": "#382929",
         /* ===== Base App ===== */
         app: {
           DEFAULT: "#0F172A",
