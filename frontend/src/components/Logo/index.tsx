@@ -1,36 +1,57 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-    className?: string;        // wrapper <Link>
-    imageClassName?: string;   // <img>
-    to?: string;               // route (default "/")
+    className?: string;
+    imgClassName?: string;
+    textClassName?: string;
+    to?: string; // cho phép đổi link nếu cần
 };
 
 const Logo = ({
     className,
-    imageClassName,
+    imgClassName,
+    textClassName,
     to = "/",
 }: LogoProps) => {
     return (
         <Link
             to={to}
-            className={cn("flex items-center gap-3", className)}
+            className={cn(
+                "flex flex-row items-center gap-0 select-none",
+                className
+            )}
         >
+            {/* <svg
+                fill="currentColor"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    clipRule="evenodd"
+                    fillRule="evenodd"
+                    d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                />
+            </svg> */}
+
             <img
-                src="/image.png"
-                alt="DNV"
-                draggable={false}
-                className={cn(
-                    "h-10 w-auto min-w-[60px] select-none",
-                    imageClassName
-                )}
+                src={`/LogoMovie.png`}
+                alt="CinemaMax Logo"
+                className={cn("w-10", imgClassName)}
             />
+
+            <h1
+                className={cn(
+                    "text-2xl font-extrabold tracking-tighter text-white",
+                    "md:block hidden",
+                    textClassName
+                )}
+            >
+                Cinema
+                <span className="text-primary">Max</span>
+            </h1>
         </Link>
     );
 };
-
-Logo.displayName = "Logo";
 
 export default Logo;
