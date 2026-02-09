@@ -7,10 +7,10 @@ import {
   errorHandler,
   notFoundHandler,
 } from "./middleware/error.middleware.js";
-
+import router from "./routes/index.js";
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8000;
 const NODE_ENV = process.env.NODE_ENV || "development";
 
 // ============================================
@@ -44,9 +44,7 @@ app.get("/", (req, res) => {
   });
 });
 
-// API routes
-// import router from "./routes/index.js";
-// app.use("/api", router);
+app.use("/api", router);
 
 // ============================================
 // 3. ERROR HANDLING

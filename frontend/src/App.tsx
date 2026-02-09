@@ -1,14 +1,10 @@
-import MainLayout from './Layouts/MainLayout';
-import { BrowserRouter } from "react-router-dom"
+import { RouterProvider } from "react-router-dom"
+import { router } from "./app/router"
+
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <MainLayout/>
-      </BrowserRouter>
-      <div className="max-w-app mx-auto bg-app-gradient text-white p-4 text-black">
-        TEST max-w-app + bg-app-gradient
-      </div>
+      <RouterProvider router={ router } />
     </>
   )
 }
