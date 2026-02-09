@@ -6,11 +6,17 @@ type ContainerProps = {
     className?: string;
     withGrain?: boolean;
     url_img?: string;
+    classOverlay?: string;
+    overlay?: boolean;
+    classNameUrlImg?:string
 } & React.HTMLAttributes<HTMLDivElement>;
 export default function Container({
     children,
     className,
     url_img,
+    classOverlay,
+    overlay = false,
+    classNameUrlImg,
     ...props
 }: ContainerProps) {
     return (
@@ -22,16 +28,28 @@ export default function Container({
             {...props}
         >
             {url_img && (
-                <div className="absolute inset-0 z-0 pointer-events-none select-none">
+                <div className={cn(
+                    "absolute inset-0 z-0 pointer-events-none select-none",
+                    classNameUrlImg
+                )}>
                     <img
                         src={`${url_img}`}
                         alt=""
-                        className="w-full h-full object-cover object-center"
+                        className={cn(
+                            "w-full object-cover h-full object-cover object-center",
+                        )}
                     />
                 </div>
             )}
 
-            <div className="relative z-10 flex max-w-app w-full mx-auto flex-col pt-20">
+            {overlay && (
+                <div className={cn(
+                    "absolute z-1 bg-gray-400/40 w-full h-full",
+                    classOverlay
+                )}></div>
+            )}
+
+            <div className="flex relative h-full z-10 max-w-app w-full mx-auto flex-col px-4">
                 {children}
             </div>
         </div>

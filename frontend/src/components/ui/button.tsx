@@ -19,8 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        register:"px-6 py-2 rounded-full border border-white text-white text-sm font-medium transition hover:bg-white hover:text-black",
-        login: "px-6 py-2 rounded-full text-white text-sm font-medium transition bg-gradient-to-r from-[#FE6969] to-[#E30713] hover:from-[#ff7b7b] hover:to-[#c90612]",
+        register:"bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-10 py-4 rounded-full font-black text-sm transition-all flex items-center gap-3 hover:scale-105 active:scale-95 uppercase tracking-widest",
+        login: "bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-sm transition-all flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 uppercase tracking-widest",
         fill: "px-6 py-2 rounded-full border border-white text-white text-sm font-medium transition hover:bg-white hover:text-black",
         navItemClass : "rounded-lg text-white/80 hover:text-white bg-white/5 hover:bg-white/10 ring-1 ring-white/10 hover:ring-white/15 transition-all"
       },

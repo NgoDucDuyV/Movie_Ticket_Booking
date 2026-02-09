@@ -43,12 +43,11 @@ const Logo = ({
             <h1
                 className={cn(
                     "text-2xl font-extrabold tracking-tighter text-white",
-                    "md:block hidden"
+                    "md:block hidden",
+                    textClassName
                 )}
             >
-                Cinema{
-                    textClassName && textClassName
-                }
+                Cinema
                 <span className="text-primary">Max</span>
             </h1>
         </Link>

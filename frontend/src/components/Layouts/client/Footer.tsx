@@ -1,20 +1,20 @@
 import React from 'react'
 import Container from '../Container'
+import Logo from '@/components/Logo'
 
 const Footer = () => {
     return (
         <footer className="bg-background-dark border-t border-white/10">
-            <Container url_img="footer_homee.jpg">
-                <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+            <Container url_img="footer_homee.jpg" className='pt-10'>
+                <div className="flex flex-col items-center justify-center md:flex-row md:justify-between gap-12">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-2 text-primary">
-                            <span className="material-symbols-outlined text-4xl font-bold">movie_filter</span>
-                            <h1 className="text-2xl font-black tracking-tighter text-white uppercase italic">CinePass</h1>
+                            <Logo textClassName='sm:block'/>
                         </div>
                         <p className="text-slate-500 text-sm max-w-xs font-medium leading-relaxed">Chuỗi rạp chiếu phim hiện đại
                             hàng đầu Việt Nam, mang đến trải nghiệm điện ảnh chân thực và sống động nhất.</p>
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-12 lg:gap-20">
+                    <div className="grid sx:grid-cols-1 sm:grid-cols-2 sl:grid-cols-3 md:grid-cols-4 gap-12 lg:gap-20">
                         <div className="flex flex-col gap-4">
                             <h4 className="text-white font-black text-[10px] uppercase tracking-widest">Dịch Vụ</h4>
                             <a className="text-slate-500 text-xs font-bold hover:text-white transition-colors" href="#">Mua Vé
@@ -61,8 +61,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-20 pt-8 border-t border-white/5 text-center text-slate-600 text-[10px] uppercase tracking-[0.2em] font-black">
-                    © 2024 CinePass Entertainment. Toàn bộ bản quyền được bảo lưu.
+                <div className="mt-20 py-8 border-t border-white/5 text-center text-slate-600 text-[10px] uppercase tracking-[0.2em] font-black">
+                    © 2026 CinePass Entertainment. Toàn bộ bản quyền được bảo lưu.
                 </div>
             </Container>
         </footer>

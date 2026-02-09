@@ -2,16 +2,15 @@ import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 const navItemsRight = [
     { label: "Trang chủ", to: "/" },
-    { label: "Lịch chiếu", to: "/lich-chieu" },
-    { label: "Tin tức", to: "/tin-tuc" },
+    { label: "Thức ăn & Nước", to: "/food" },
     { label: "Khuyến mãi", to: "/khuyen-mai" },
     { label: "Giá vé", to: "/gia-ve" },
     { label: "Liên hoan phim", to: "/lien-hoan-phim" },
 ];
 
 const navItemsRLeft = [
-    { label: "Trang chủ", to: "/" },
-    { label: "Lịch chiếu", to: "/lich-chieu" },
+    { label: "Chọn Rạp", to: "/" },
+    { label: "Lịch chiếu Theo Rạp", to: "/showtimes" },
 ];
 
 type NavHeaderProps = {
@@ -49,7 +48,6 @@ const NavHeader = ({ className }: NavHeaderProps) => {
                         </li>
                     ))}
                 </ul>
-
 
                 <ul className="flex items-center gap-4">
                     {navItemsRight.map((item) => (

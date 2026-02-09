@@ -10,6 +10,78 @@ module.exports = {
   prefix: "",
   theme: {
     extend: {
+      colors: {
+        /* =========================
+           BRAND COLORS
+        ========================= */
+
+        primary: {
+          50: "#ffe5e5",
+          100: "#ffb8b8",
+          200: "#ff8a8a",
+          300: "#ff5c5c",
+          400: "#ff2e2e",
+          500: "#e61919", // MAIN RED
+          600: "#c91414",
+          700: "#a30f0f",
+          800: "#7d0b0b",
+          900: "#570707",
+        },
+
+        gold: {
+          50: "#fff8e1",
+          100: "#ffecb3",
+          200: "#ffe082",
+          300: "#ffd54f",
+          400: "#ffca28",
+          500: "#f4c430", // MAIN GOLD
+          600: "#e0b020",
+          700: "#c79a12",
+          800: "#a67c00",
+          900: "#7a5a00",
+        },
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        background: {
+          dark: "#181111", // main page
+          soft: "#221818", // card
+          lighter: "#2a1f1f", // hover
+          light: "#f8f6f6",
+        },
+
+        /* =========================
+           TEXT
+        ========================= */
+
+        text: {
+          primary: "#ffffff",
+          secondary: "#b3b3b3",
+          muted: "#6b6b6b",
+        },
+
+        /* =========================
+           STATE
+        ========================= */
+
+        success: "#22c55e",
+        warning: "#f59e0b",
+        error: "#ef4444",
+        info: "#3b82f6",
+      },
+
+      fontFamily: {
+        display: ["Be Vietnam Pro", "sans-serif"],
+      },
+
+      borderRadius: {
+        DEFAULT: "1rem",
+        lg: "2rem",
+        xl: "3rem",
+        full: "9999px",
+      },
       fontFamily: {
         display: ["Be Vietnam Pro", "sans-serif"],
       },

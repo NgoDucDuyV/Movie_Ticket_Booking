@@ -7,7 +7,7 @@ const MainLayout = () => {
         <>
             <div className="bg-black">
                 <Header />
-                <main className="flex-1 w-full mx-auto">
+                <main className="flex-1 w-full h-full mx-auto">
                     <Outlet />
                 </main>
                 <Footer />

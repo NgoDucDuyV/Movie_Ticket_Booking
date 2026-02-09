@@ -12,5 +12,5 @@
   --breakpoint-2xl: 1536px;
 
   /* nếu muốn có token cho container max width */
-  --container-app: 1400px;
+  --container-app: 1500px;
 }
