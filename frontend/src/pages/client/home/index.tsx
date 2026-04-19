@@ -1,4 +1,3 @@
-import React from 'react'
 import ClientHome from './ClientHome'
 
 const index = () => {
