@@ -1,6 +1,5 @@
 import Container from '@/components/Layouts/Container'
 import Logo from '@/components/Logo'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ClientNotFound = () => {

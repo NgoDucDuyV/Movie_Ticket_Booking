@@ -1,62 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Container from '../../../components/Layouts/Container'
 import { Flame, Play, Ticket } from 'lucide-react'
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, } from 'motion/react';
 import { cn } from '@/lib/utils';
-
-// const heroMovies = [
-//     {
-//         id: 1,
-//         title: "HÀNH TINH CÁT",
-//         highlight: "CÁT: PHẦN HAI",
-//         description:
-//             "Một kiệt tác điện ảnh không thể bỏ lỡ. Hãy theo chân Paul Atreides trong hành trình báo thù và định đoạt số phận của thiên hà.",
-//         // backdrop ngang 16:9
-//         image:
-//             "https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
-//         status: "Đang Chiếu Rạp",
-//         trailer: "https://youtube.com/watch?v=Way9Dexny3w",
-//         bookingUrl: "/booking/dune-2",
-//     },
-
-//     {
-//         id: 2,
-//         title: "KUNG FU PANDA",
-//         highlight: "PHẦN 4",
-//         description:
-//             "Po trở lại với hành trình hài hước và những pha hành động võ thuật đỉnh cao.",
-//         image:
-//             "https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
-//         status: "Phim Hot",
-//         trailer: "https://youtube.com/",
-//         bookingUrl: "/booking/kungfu-panda-4",
-//     },
-
-//     {
-//         id: 3,
-//         title: "AVENGERS",
-//         highlight: "SECRET WARS",
-//         description:
-//             "Cuộc chiến đa vũ trụ bùng nổ. Tất cả anh hùng hội tụ trong trận chiến cuối cùng.",
-//         image:
-//             "https://image.tmdb.org/t/p/original/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
-//         status: "Sắp Chiếu",
-//         trailer: "https://youtube.com/",
-//         bookingUrl: "/booking/avengers",
-//     },
-//     {
-//         id: 3,
-//         title: "AVENGERS",
-//         highlight: "SECRET WARS",
-//         description:
-//             "Cuộc chiến đa vũ trụ bùng nổ. Tất cả anh hùng hội tụ trong trận chiến cuối cùng.",
-//         image:
-//             "https://image.tmdb.org/t/p/original/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
-//         status: "Sắp Chiếu",
-//         trailer: "https://youtube.com/",
-//         bookingUrl: "/booking/avengers",
-//     },
-// ];
 
 export type THeroMovies = {
     id: number | string,
@@ -201,10 +150,23 @@ export const heroMovies: THeroMovies[] = [
         bookingUrl: "/booking/interstellar",
     },
 ];
+import TrailerModal from "@/components/modals/TrailerModal";
+import { getYoutubeId } from "@/lib/youtube";
 
 const HeroCarousel = () => {
+    const [openTrailer, setOpenTrailer] = useState(false);
+    
+    // auto đóng khi đổi slide (tuỳ bạn)
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [slides, setslides] = useState<THeroMovies[]>(heroMovies)
+    const [slides] = useState<THeroMovies[]>(heroMovies)
+        
+    const youtubeId = getYoutubeId(slides[currentSlide]?.trailer ?? "");
+    useEffect(() => {
+        setOpenTrailer(false);
+    }, [currentSlide]);
+    
+    
+    
     useEffect(() => {
 
         const timer = setInterval(() => {
@@ -212,16 +174,17 @@ const HeroCarousel = () => {
         }, 5000); // Auto-advance every 5 seconds
 
         return () => clearInterval(timer);
+        
     }, []);
     return (
         <>
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentSlide}
-                    initial={{ opacity: 0, scale: 1.1 }}
+                    initial={{ opacity: 0, scale: 1.06 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.7 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     <Container
                         className="h-[100vh] py-10 overflow-hidden pt-20"
@@ -229,9 +192,9 @@ const HeroCarousel = () => {
                     >
                         <div className="relative w-full my-auto px-6 flex flex-col justify-center items-start">
                             <motion.div
-                                initial={{ opacity: 0, y: -30 }}
+                                initial={{ opacity: 0, y: 18 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2, duration: 0.5 }}
+                                transition={{ delay: 0.22, duration: 0.55 }}
                             >
                                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-white rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-primary/30">
                                     <span className="material-symbols-outlined text-sm">
@@ -254,9 +217,9 @@ const HeroCarousel = () => {
                                 </h1>
                             </motion.h1>
                             <motion.p
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 22 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2, duration: 0.5 }}
+                                transition={{ delay: 0.25, duration: 0.55 }}
                             >
                                 <p className="text-lg text-slate-300 max-w-xl mb-10 leading-relaxed font-medium">
                                     {slides[currentSlide]?.description}
@@ -264,9 +227,9 @@ const HeroCarousel = () => {
                             </motion.p>
                             <div className="flex flex-wrap gap-5">
                                 <motion.button
-                                    initial={{ opacity: 0, x: -30 }}
+                                    initial={{ opacity: 0, x: -24 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.2, duration: 0.6 }}
+                                    transition={{ delay: 0.28, duration: 0.6 }}
                                 >
                                     <button className="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-sm transition-all flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 uppercase tracking-widest">
                                         <span className="material-symbols-outlined">
@@ -276,11 +239,14 @@ const HeroCarousel = () => {
                                     </button>
                                 </motion.button>
                                 <motion.button
-                                    initial={{ opacity: 0, x: 30 }}
+                                    initial={{ opacity: 0, x: 24 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.2, duration: 0.6 }}
+                                    transition={{ delay: 0.28, duration: 0.6 }}
                                 >
-                                    <button className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-10 py-4 rounded-full font-black text-sm transition-all flex items-center gap-3 hover:scale-105 active:scale-95 uppercase tracking-widest">
+                                    <button
+                                        onClick={() => youtubeId && setOpenTrailer(true)}
+                                        disabled={!youtubeId}
+                                        className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-10 py-4 rounded-full font-black text-sm transition-all flex items-center gap-3 hover:scale-105 active:scale-95 uppercase tracking-widest">
                                         <span className="material-symbols-outlined">
                                             <Play />
                                         </span>
@@ -320,6 +286,11 @@ const HeroCarousel = () => {
                     </Container>
                 </motion.div>
             </AnimatePresence>
+            <TrailerModal
+                open={openTrailer}
+                onClose={() => setOpenTrailer(false)}
+                youtubeId={youtubeId}
+            />
         </>
     )
 }

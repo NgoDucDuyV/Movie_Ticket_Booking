@@ -13,6 +13,16 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const NODE_ENV = process.env.NODE_ENV || "development";
 
+// Ensure DB connection for serverless
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 // ============================================
 // 1. MIDDLEWARE
 // ============================================
@@ -98,5 +108,10 @@ process.on("unhandledRejection", (reason, promise) => {
   process.exit(1);
 });
 
-// Start server
-startServer();
+// Export app for Vercel serverless functions
+export default app;
+
+// Start server for local development
+if (process.env.NODE_ENV !== "production") {
+  startServer();
+}

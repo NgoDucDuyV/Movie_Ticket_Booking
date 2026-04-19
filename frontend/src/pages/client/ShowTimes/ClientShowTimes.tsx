@@ -1,5 +1,5 @@
 import Container from '@/components/Layouts/Container'
-import React from 'react'
+// import HeroCarousel from '../home/HeroCarousel's
 
 function ClientShowTimes() {
     return (
@@ -9,6 +9,7 @@ function ClientShowTimes() {
                     Client ShowTimes
                 </div>
             </Container>
+            {/* <HeroCarousel/> */}
         </>
         
     )

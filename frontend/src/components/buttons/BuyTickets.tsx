@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Ticket } from "lucide-react";
@@ -13,10 +12,10 @@ const BuyTickets = ({ textValue, className }: BuyTicketsProps) => {
         <Button
             className={cn(
                 // layout
-                "relative group max-h-[60px] min-w-[130px] h-[40px] overflow-hidden",
+                "relative group max-h-[60px] min-w-[140px] h-[40px] overflow-hidden",
                 "inline-flex items-center justify-center",
                 // size / shape
-                "rounded-sm",
+                "rounded-xl",
                 // text
                 "text-black",
                 // margin ,padding
@@ -25,7 +24,7 @@ const BuyTickets = ({ textValue, className }: BuyTicketsProps) => {
                 "after:content-['']",
                 "after:absolute after:inset-0",
                 "after:w-0 after:h-full after:left-0 after:top-0",
-                "after:bg-gradient-to-r after:from-brand after:to-form",
+                "after:bg-gradient-to-r after:from-primary-500 after:to-gold-700",
                 "after:transition-[width] after:duration-500 after:ease-in-out",
                 "hover:after:w-full",
                 "after:z-0",

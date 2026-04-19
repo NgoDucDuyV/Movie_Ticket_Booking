@@ -11,10 +11,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* =========================
-           BRAND COLORS
-        ========================= */
-
         primary: {
           50: "#ffe5e5",
           100: "#ffb8b8",
@@ -41,10 +37,6 @@ module.exports = {
           900: "#7a5a00",
         },
 
-        /* =========================
-           BACKGROUND
-        ========================= */
-
         background: {
           dark: "#181111", // main page
           soft: "#221818", // card
@@ -52,19 +44,11 @@ module.exports = {
           light: "#f8f6f6",
         },
 
-        /* =========================
-           TEXT
-        ========================= */
-
         text: {
           primary: "#ffffff",
           secondary: "#b3b3b3",
           muted: "#6b6b6b",
         },
-
-        /* =========================
-           STATE
-        ========================= */
 
         success: "#22c55e",
         warning: "#f59e0b",

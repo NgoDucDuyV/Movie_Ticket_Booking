@@ -1,5 +1,4 @@
 import Container from '@/components/Layouts/Container'
-import React from 'react'
 import HeroCarousel from "@/pages/client/home/HeroCarousel"
 import NowPlayingSelect from "@/pages/client/home/NowPlayingSection"
 import ComingSoonSection from "@/pages/client/home/ComingSoonSection"

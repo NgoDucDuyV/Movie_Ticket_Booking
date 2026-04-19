@@ -1,9 +1,9 @@
-import mongooose from "mongoose";
+import mongoose from "mongoose";
 export const connectDB = async () => {
   try {
-    await mongooose.connect(process.env.MONGODB_CONNECTION);
-    console.log("Kết lỗi CSDL thành công!");
+    await mongoose.connect(process.env.MONGODB_CONNECTION);
+    console.log("Kết nối CSDL thành công!");
   } catch (error) {
-    console.log("Lỗi kết lỗi CSDL", error);
+    console.log("Lỗi kết nối CSDL", error);
   }
 };
